@@ -1,7 +1,12 @@
 <template>
-  <div>Hello World</div>
+  <div>
+    <login />
+  </div>
 </template>
 
 <script>
-export default {}
+import Login from '~/components/forms/auth/Login'
+export default {
+  components: { Login },
+}
 </script>
