@@ -19,7 +19,9 @@
       />
     </v-card-text>
     <v-card-actions>
-      <v-btn :disabled="!isFormValid" color="primary"> Login </v-btn>
+      <v-btn :disabled="!isFormValid" color="primary" @click="login">
+        Login
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -43,6 +45,13 @@ export default {
     },
     isFormValid() {
       return this.isEmailValid && this.isPasswordValid
+    },
+  },
+  methods: {
+    login() {
+      if (this.isEmailValid) {
+        this.$emit('success', this.form)
+      } else this.$emit('failed')
     },
   },
 }

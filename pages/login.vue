@@ -1,6 +1,6 @@
 <template>
   <div>
-    <login />
+    <login @success="onSuccess" />
   </div>
 </template>
 
@@ -8,5 +8,10 @@
 import Login from '~/components/forms/auth/Login'
 export default {
   components: { Login },
+  methods: {
+    onSuccess(payload) {
+      alert(`${payload.email} Logged in Successfully`)
+    },
+  },
 }
 </script>
