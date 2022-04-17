@@ -9,7 +9,7 @@
         type="email"
         outlined
       />
-      <p v-if="!isEmailValid">Email Is Required</p>
+      <p v-if="!isEmailValid">Email Is Required</p>       
       <v-text-field
         v-model="form.password"
         placeholder="Enter Your Password"
@@ -17,7 +17,8 @@
         type="password"
         outlined
       />
-    </v-card-text>
+      
+    </v-card-text>    
     <v-card-actions>
       <v-btn :disabled="!isFormValid" color="primary"> Login </v-btn>
     </v-card-actions>
