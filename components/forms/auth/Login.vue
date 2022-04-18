@@ -19,9 +19,10 @@
       />
     </v-card-text>
     <v-card-actions>
-      <v-btn :disabled="!isFormValid" color="primary" @click="login">
-        Login
-      </v-btn>
+      <v-btn>Cancel</v-btn>
+      <v-spacer />
+      <v-btn>Register</v-btn>
+      <v-btn>Login</v-btn>
     </v-card-actions>
   </v-card>
 </template>
