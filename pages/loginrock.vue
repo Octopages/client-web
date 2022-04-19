@@ -26,10 +26,13 @@
 import LoginRock from '~/components/forms/auth/LoginRock'
 export default {
   components: { LoginRock },
+  mounted() {
+    this.$refs.loginrockComponent.form.email = '5aloda'
+  },
   methods: {
     onSuccess(payload) {
-      // alert(`${payload.email} Loged in successfuly`)
-      // alert( `${this.$refs.loginrockComponent.form.email} enta sa7777777`)
+      alert(`${payload.email} Loged in successfuly`)
+      // alert(`${this.$refs.loginrockComponent.form.email} enta sa7777777`)
       this.$refs.loginrockComponent.login()
     },
   },

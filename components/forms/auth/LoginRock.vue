@@ -53,7 +53,7 @@ export default {
   },
   methods: {
     login() {
-      if (this.isFormValid) alert(' loged successfuly ya 5aloda')
+      if (this.isFormValid) alert(`logged successfuly ya ${this.form.email}`)
       else alert(' Something wrong')
     },
     loginWithEmit() {
