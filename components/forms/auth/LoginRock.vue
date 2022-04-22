@@ -20,9 +20,12 @@
       <p v-if="!isPasswordValid">Password is Required</p>
     </v-card-text>
     <v-card-actions>
+      <v-btn>Cancel</v-btn>
+      <v-spacer />
       <v-btn :disabled="!isFormValid" color="primary" @click="loginWithEmit">
         Login
       </v-btn>
+      <v-btn>Register</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -50,7 +53,7 @@ export default {
   },
   methods: {
     login() {
-      if (this.isFormValid) alert(' loged successfuly')
+      if (this.isFormValid) alert(`logged successfuly ya ${this.form.email}`)
       else alert(' Something wrong')
     },
     loginWithEmit() {
