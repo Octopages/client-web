@@ -17,6 +17,7 @@
         type="password"
         outlined
       />
+      {{ namesChanges }}
     </v-card-text>
     <v-card-actions>
       <v-btn>Cancel</v-btn>
@@ -37,6 +38,9 @@ export default {
         email: '',
         password: '',
       },
+      validCounter: 0,
+      names: ['ahmed', 'mohamed', 'khaled'],
+      namesChanges: 0,
     }
   },
   computed: {
@@ -48,6 +52,20 @@ export default {
     },
     isFormValid() {
       return this.isEmailValid && this.isPasswordValid
+    },
+  },
+  watch: {
+    isFormValid() {
+      if (this.isFormValid === true) {
+        this.validCounter += 1
+      }
+    },
+    names: {
+      deep: true, // if you are watching arrays or json object
+      handler() {
+        // the callback function to be executed on change
+        this.namesChanges += 1
+      },
     },
   },
   methods: {
