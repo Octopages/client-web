@@ -18,7 +18,11 @@
         outlined
       />
       <p v-if="!isPasswordValid">Password is Required</p>
+      {{ validCounter }}
+      <br />
+      {{ namechanges }}
     </v-card-text>
+
     <v-card-actions>
       <v-btn>Cancel</v-btn>
       <v-spacer />
@@ -38,6 +42,9 @@ export default {
         email: '',
         password: '',
       },
+      validCounter: 0,
+      names: ['ahmed', 'ali', 'khaled'],
+      namechanges: 0,
     }
   },
   computed: {
@@ -49,6 +56,19 @@ export default {
     },
     isFormValid() {
       return this.isEmailValid && this.isPasswordValid
+    },
+  },
+  watch: {
+    isFormValid() {
+      if (this.isFormValid === true) {
+        this.validCounter += 1
+      }
+    },
+    names: {
+      deep: true,
+      handler() {
+        this.namechanges += 1
+      },
     },
   },
   methods: {
