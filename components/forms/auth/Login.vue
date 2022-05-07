@@ -17,6 +17,7 @@
         type="password"
         outlined
       />
+      {{ validCounter }}
       {{ namesChanges }}
     </v-card-text>
     <v-card-actions>
